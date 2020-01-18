@@ -1,0 +1,16 @@
+syntax="proto3";
+option java_multiple_files = true;
+package com.grpc.userservice;
+
+message UserRequest {
+    string firstName = 1;
+    string lastName = 2;
+}
+
+message UserResponse {
+    string greeting = 1;
+}
+
+service UserService {
+    rpc hello(UserRequest) returns (UserResponse);
+}
